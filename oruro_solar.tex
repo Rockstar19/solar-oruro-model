@@ -1,0 +1,163 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, graphicx}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{CUANTIFICACIÓN DE LA ENERGÍA SOLAR PARA LA CIUDAD DE ORURO}
+\author{M.Sc. Ing. Edgar S. Peñaranda Muñoz}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Resumen}
+Luego de cinco años ininterrumpidos del servicio la estación meteorológica...
+[RESUMEN COMPLETO TRANSCRITO]
+
+\section*{Introducción}
+Conformado el Instituto de Investigación...
+[CONTENIDO COMPLETO]
+
+\section*{Especificaciones geográficas y técnicas}
+Latitud: $17^\circ 59' 36'' S$ \\
+Longitud: $67^\circ 08' 09'' W$ \\
+Altitud: 3725 m.s.n.m.
+
+\section*{Parámetros solares}
+
+\subsection*{Declinación solar}
+\begin{equation}
+\delta = 45.23 \sin\left(\frac{360}{365.25}(n-81)\right)
+\end{equation}
+
+\subsection*{Ángulo horario}
+\begin{equation}
+w = 15^\circ (H - 12)
+\end{equation}
+
+\subsection*{Altura solar}
+\begin{equation}
+\sin(ALT) = \cos(LAT)\cos(DEC)\cos(w) + \sin(LAT)\sin(DEC)
+\end{equation}
+
+\subsection*{Azimut solar}
+\begin{equation}
+\sin(AZ) = \frac{\sin(w)\cos(DEC)}{\cos(ALT)}
+\end{equation}
+
+\section*{Radiación solar diaria}
+
+\begin{equation}
+HHN = \sum IHN \cdot t
+\end{equation}
+
+\subsection*{Radiación extraterrestre}
+\begin{equation}
+H_0 = \frac{24}{\pi} I_0 \left[ \cos(LAT)\cos(DEC)\sin(WHE) + WHE\sin(LAT)\sin(DEC) \right]
+\end{equation}
+
+\subsection*{Índice de nubosidad}
+\begin{equation}
+K = \frac{HHN}{H_0}
+\end{equation}
+
+\subsection*{Fracción difusa (Liu \& Jordan)}
+\begin{equation}
+FD = 1.3903 - 4.0273K + 5.5315K^2 - 3.108K^3
+\end{equation}
+
+\subsection*{Componentes}
+\begin{equation}
+DFN = FD \cdot HHN
+\end{equation}
+
+\begin{equation}
+DRN = HHN - DFN
+\end{equation}
+
+\section*{Radiación en superficies inclinadas}
+
+\begin{equation}
+RB = \frac{\int_{WE}^{WS} \cos(INC)\,dw}{\int_{WHS}^{WHE} \cos(INCH)\,dw}
+\end{equation}
+
+\begin{equation}
+HDR = DRN \cdot RB
+\end{equation}
+
+\begin{equation}
+HDF = DFN \cdot \frac{1 + \cos\gamma}{2}
+\end{equation}
+
+\begin{equation}
+HRF = DFN \cdot RF \cdot \frac{1 - \cos\gamma}{2}
+\end{equation}
+
+\begin{equation}
+HIT = HDR + HDF + HRF
+\end{equation}
+
+\section*{Radiación instantánea}
+
+\begin{equation}
+rd = \frac{IDFH}{DFN} = \frac{\pi}{24} \cdot \frac{\cos w - \cos WHE}{\sin WHE - WHE \cos WHE}
+\end{equation}
+
+\begin{equation}
+IDRH = IHN - IDFH
+\end{equation}
+
+\section*{Superficies inclinadas (instantánea)}
+
+\begin{equation}
+rb = \frac{IDR}{IDRH} = \frac{\cos(INC)}{\cos(INCH)}
+\end{equation}
+
+\begin{equation}
+IDF = IDFH \cdot \frac{1 + \cos\gamma}{2}
+\end{equation}
+
+\begin{equation}
+IRF = IHN \cdot RF \cdot \frac{1 - \cos\gamma}{2}
+\end{equation}
+
+\begin{equation}
+IT = IDR + IDF + IRF
+\end{equation}
+
+\section*{Resultados}
+
+\subsection*{Tabla: Radiación diaria horizontal}
+\begin{tabular}{lcccc}
+\hline
+ & Verano & Otoño & Invierno & Primavera \\
+\hline
+HHN & 6458 & 6326 & 5149 & 6785 \\
+DRN & 4361 & 4564 & 4201 & 5345 \\
+DFN & 2097 & 1761 & 948 & 1440 \\
+\hline
+\end{tabular}
+
+\subsection*{Tabla: Superficie inclinada}
+\begin{tabular}{lcccc}
+\hline
+ & Verano & Otoño & Invierno & Primavera \\
+\hline
+HIT & 5462 & 6377 & 6948 & 7163 \\
+HDR & 3411 & 4648 & 6004 & 5737 \\
+HDF & 1999 & 1679 & 904 & 1372 \\
+HRF & 51 & 50 & 41 & 54 \\
+\hline
+\end{tabular}
+
+\section*{Conclusiones}
+La magnitud del histórico, su continuidad y calidad permiten cuantificar con fiabilidad la energía solar en Oruro...
+
+\section*{Referencias}
+Duffie, J.A., Beckman W.A., Solar Engineering, 1978 \\
+Manrique, J.A., Energía Solar, 1984 \\
+Cabrera, D., Sistemas Solares, 1996
+
+\end{document}
